@@ -57,6 +57,47 @@
   border-radius: 16px;
   background: var(--requestly-color-neutral-900);
   padding: 16px;
+  position: relative;
+  overflow: hidden;
+
+  // Gradient border effect
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 16px;
+    background: linear-gradient(
+      135deg,
+      #ff6b35 0%,
+      #f7931e 12.5%,
+      #ff1493 25%,
+      #c71585 37.5%,
+      #00d4ff 50%,
+      #00bfff 62.5%,
+      #6a5acd 75%,
+      #4b0082 87.5%,
+      #ff6b35 100%
+    );
+    background-size: 200% 200%;
+    z-index: 0;
+    filter: blur(1px);
+    opacity: 0.9;
+    animation: gradientShift 3s ease infinite;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background: var(--requestly-color-neutral-900);
+    z-index: 1;
+  }
+
+  & > * {
+    position: relative;
+    z-index: 2;
+  }
 
   .header-section {
     display: flex;
@@ -242,6 +283,47 @@
   height: 346px;
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
+
+  // Gradient border effect
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 16px;
+    background: linear-gradient(
+      135deg,
+      #ff6b35 0%,
+      #f7931e 12.5%,
+      #ff1493 25%,
+      #c71585 37.5%,
+      #00d4ff 50%,
+      #00bfff 62.5%,
+      #6a5acd 75%,
+      #4b0082 87.5%,
+      #ff6b35 100%
+    );
+    background-size: 200% 200%;
+    z-index: 0;
+    filter: blur(1px);
+    opacity: 0.9;
+    animation: gradientShift 3s ease infinite;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background: var(--requestly-color-neutral-900);
+    z-index: 1;
+  }
+
+  & > * {
+    position: relative;
+    z-index: 2;
+  }
 
   .header-content {
     padding: 0 20px;
@@ -482,6 +564,16 @@
     li.ant-dropdown-menu-item-divider {
       margin-left: 8px;
     }
+  }
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
   }
 }
 
