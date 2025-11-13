@@ -54,6 +54,11 @@
       "require": "./dist/modules/*/index.cjs.js",
       "import": "./dist/modules/*/index.esm.js"
     },
+    "./types/*/*": {
+      "types": "./dist/types/*/*/index.d.ts",
+      "require": "./dist/types/*/*/index.cjs.js",
+      "import": "./dist/types/*/*/index.esm.js"
+    },
     "./types/*": {
       "types": "./dist/types/*/index.d.ts",
       "require": "./dist/types/*/index.cjs.js",
